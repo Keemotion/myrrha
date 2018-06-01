@@ -43,20 +43,8 @@ begin
     # executed spec command to stdout.
     t.verbose = true
 
-    # Use rcov for code coverage?
-    t.rcov = false
-
-    # Path to rcov.
-    t.rcov_path = "rcov"
-
-    # Command line options to pass to rcov. See 'rcov --help' about this
-    t.rcov_opts = []
-
     # Command line options to pass to ruby. See 'ruby --help' about this
     t.ruby_opts = []
-
-    # Path to rspec
-    t.rspec_path = "rspec"
 
     # Command line options to pass to rspec. See 'rspec --help' about this
     t.rspec_opts = ["--color", "--backtrace"]

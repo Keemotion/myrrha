@@ -3,7 +3,7 @@ module Myrrha
 
   # These are all classes for which using inspect is safe for to_ruby_literal
   TO_RUBY_THROUGH_INSPECT = [ NilClass, TrueClass, FalseClass, 
-                              Fixnum, Bignum, Float, 
+                              Integer, Float, 
                               String, Symbol, Class, Module, Regexp ]
   
   # Defines basic coercions for implementing to_ruby_literal

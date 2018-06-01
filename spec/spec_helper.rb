@@ -9,12 +9,11 @@ $SAFE_VALUES = {
   NilClass   => [ nil ],
   TrueClass  => [ true ],
   FalseClass => [ false ],
-  Fixnum     => [ -(2**(0.size * 8 - 2)), -1, 0, 1, 10, (2**(0.size * 8 - 2) - 1)],
-  Bignum     => [ -(2**(0.size * 8 - 2)) - 1, (2**(0.size * 8 - 2)) ],
+  Integer    => [ -(2**(0.size * 8 - 2)) - 1, (2**(0.size * 8 - 2)) ],
   Float      => [ -0.10, 0.0, 0.10 ],
   String     => ['', 'hello'],
   Symbol     => [ :hello, :"s-b-y-c", :"12" ],
-  Class      => [ Integer, ::Struct::Tms ],
+  Class      => [ Integer, ::Process::Tms ],
   Module     => [ Kernel, Myrrha ],
   Regexp     => [ /a-z/, /^$/, /\s*/, /[a-z]{15}/ ],
   Range      => [ 0..10, 0...10 ],
@@ -28,5 +27,5 @@ $UNSAFE_VALUES = {
   Hash  => [ {Date.today => Time.now} ],
   Range => [ Date.today..(Date.today+1) ]
 }
-$VALUES = $SAFE_VALUES.values.inject([], :+) + 
+$VALUES = $SAFE_VALUES.values.inject([], :+) +
           $UNSAFE_VALUES.values.inject([], :+)
