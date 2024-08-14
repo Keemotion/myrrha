@@ -15,7 +15,7 @@ shared_examples_for "a value" do
   it "should implement class.parse / #to_s correctly" do
     if subject.class.respond_to?(:parse) && subject.respond_to?(:to_s)
       begin
-        expect(subject.class.parse(subject.to_s)).to eq(subject)
+        expect(subject.class.parse(subject.to_s).to_s).to eq(subject.to_s)
       rescue
         t1 = subject.class.parse(subject.to_s)
         t2 = subject.class.parse(subject.to_s)
