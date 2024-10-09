@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
-gem "rake", "~> 10.0"
-gem "rspec", "~> 2.10"
+gem "rake", "~> 13.0"
+gem "rspec", "~> 3.13"
 
 group :runtime do
   gem "domain", "~> 1.0"
@@ -12,6 +12,6 @@ group :release do
 end
 
 group :doc do
-  gem "yard", "~> 0.7.4"
+  gem "yard", "~> 0.9.36"
   gem "bluecloth", "~> 2.2"
 end

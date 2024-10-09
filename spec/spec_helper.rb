@@ -13,7 +13,7 @@ $SAFE_VALUES = {
   Float      => [ -0.10, 0.0, 0.10 ],
   String     => ['', 'hello'],
   Symbol     => [ :hello, :"s-b-y-c", :"12" ],
-  Class      => [ Integer, ::Struct::Tms ],
+  Class      => [ Integer, DateTime ],
   Module     => [ Kernel, Myrrha ],
   Regexp     => [ /a-z/, /^$/, /\s*/, /[a-z]{15}/ ],
   Range      => [ 0..10, 0...10 ],
@@ -27,5 +27,5 @@ $UNSAFE_VALUES = {
   Hash  => [ {Date.today => Time.now} ],
   Range => [ Date.today..(Date.today+1) ]
 }
-$VALUES = $SAFE_VALUES.values.inject([], :+) + 
+$VALUES = $SAFE_VALUES.values.inject([], :+) +
           $UNSAFE_VALUES.values.inject([], :+)
